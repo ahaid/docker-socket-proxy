@@ -7,10 +7,12 @@ ENV ALLOW_RESTARTS=0 \
     COMMIT=0 \
     CONFIGS=0 \
     CONTAINERS=0 \
+    CONTAINERS_POST=0 \
     DISTRIBUTION=0 \
     EVENTS=1 \
     EXEC=0 \
     IMAGES=0 \
+    IMAGES_POST=0 \
     INFO=0 \
     NETWORKS=0 \
     NODES=0 \
@@ -19,20 +21,20 @@ ENV ALLOW_RESTARTS=0 \
     POST=0 \
     SECRETS=0 \
     SERVICES=0 \
+    SERVICES_POST=0 \
     SESSION=0 \
     SWARM=0 \
     SYSTEM=0 \
     TASKS=0 \
     VERSION=1 \
-    VOLUMES=0
+    VOLUMES=0 \
+    VOLUMES_POST=1
 COPY haproxy.cfg /usr/local/etc/haproxy/haproxy.cfg
 
 # Metadata
 ARG VCS_REF
 ARG BUILD_DATE
 LABEL org.label-schema.schema-version="1.0" \
-      org.label-schema.vendor=Tecnativa \
-      org.label-schema.license=Apache-2.0 \
       org.label-schema.build-date="$BUILD_DATE" \
       org.label-schema.vcs-ref="$VCS_REF" \
-      org.label-schema.vcs-url="https://github.com/Tecnativa/docker-socket-proxy"
+      org.label-schema.vcs-url="https://github.com/ahaid/docker-socket-proxy"
